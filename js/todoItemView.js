@@ -7,7 +7,7 @@ const ToDoItemView = Backbone.View.extend({
     },
 
     render: function(){
-        this.$el.html(this.model.get("description"));
+        this.$el.html(this.model.escape("description"));
         return this;
     }
 });
