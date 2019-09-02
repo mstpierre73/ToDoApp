@@ -6,3 +6,11 @@ body {
 }
 
 body, p { font-size: 24px; }
+
+li {
+	list-style-type: none;
+}
+
+.completed {
+	text-decoration: line-through;
+}
