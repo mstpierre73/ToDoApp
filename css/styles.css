@@ -7,10 +7,49 @@ body {
 
 body, p { font-size: 24px; }
 
-li {
-	list-style-type: none;
+ul {
+	margin: 0;
+	padding: 0;
 }
 
-.completed {
+#newTodoItem, #add {
+	padding: 10px;
+	margin-bottom: 40px;
+}
+
+#newTodoItem {
+	width: 40%;
+	border-radius: 5px;
+}
+
+#todoItems {
+	width: 80%;
+}
+
+li {
+	list-style-type: none;
+	padding: 10px;
+	border: 1px solid white;
+}
+
+button {
+	border-radius: 5px;
+	background-color: white;
+	border: 0;
+	padding: 7px 10px;
+}
+
+#delete {
+	float: right;
+	color: red;
+}
+
+.completed label {
 	text-decoration: line-through;
+	font-style: italic;
+}
+
+label {
+	display: inline-block;
+	width: 75%;
 }
