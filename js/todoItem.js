@@ -3,6 +3,8 @@ const ToDoItem = Backbone.Model.extend({
         isCompleted: false
     },
 
+    url: "fakeUrl",
+
     validate: function(attrs){
         if(!attrs.description){
             return "Description is required";

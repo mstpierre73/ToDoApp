@@ -10,11 +10,16 @@ const ToDoItemsView = Backbone.View.extend({
         }
 
         this.model.on("add", this.onAddTodoItem, this);
+        this.model.on("remove", this.onRemoveTodoItem, this);
     },
 
     onAddTodoItem: function(todoItem){
         let view = new ToDoItemView({model: todoItem});
         this.$el.append(view.render().$el);
+    },
+
+    onRemoveTodoItem: function(todoItem){
+        this.$("li#" + todoItem.id).remove();
     },
 
     events: {
