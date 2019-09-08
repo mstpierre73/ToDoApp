@@ -1,21 +1,21 @@
 const ToDoItem = Backbone.Model.extend({
     defaults: {
-        isCompleted: false
+        completed: false
     },
 
-    url: "fakeUrl",
+    urlRoot: "https://jsonplaceholder.typicode.com/todos",
 
     validate: function(attrs){
-        if(!attrs.description){
-            return "Description is required";
+        if(!attrs.title){
+            return "title is required";
         }
     },
 
     toggle: function(){
-        if(this.get("isCompleted")){
-            this.set("isCompleted", false);
+        if(this.get("completed")){
+            this.set("completed", false);
         } else {
-            this.set("isCompleted", true);
+            this.set("completed", true);
         }
     }
 });

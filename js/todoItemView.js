@@ -15,6 +15,7 @@ const ToDoItemView = Backbone.View.extend({
 
     onClickToggle: function(){
         this.model.toggle();
+        this.model.save();
     },
 
     onClickDelete: function(){
@@ -23,10 +24,10 @@ const ToDoItemView = Backbone.View.extend({
 
     render: function(){
         this.$el.attr("id", this.model.id);
-        this.$el.toggleClass("completed", this.model.get("isCompleted"));
+        this.$el.toggleClass("completed", this.model.get("completed"));
 
-        let checked = this.model.get("isCompleted") ? "checked" : "";
-        this.$el.html("<input id='toggle' type='checkbox'" + checked + ">" + this.model.escape("description") + " <button id='delete'>Delete</button>");
+        let checked = this.model.get("completed") ? "checked" : "";
+        this.$el.html("<input id='toggle' type='checkbox'" + checked + ">" + this.model.escape("title") + " <button id='delete'>Delete</button>");
         return this;
     }
 });
